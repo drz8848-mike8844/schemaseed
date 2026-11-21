@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: Orders API
+  version: "1.0.0"
+  description: >
+    Two documents: the orders live here, the users live in users.yaml.
+    The order references the user across the file boundary, which is what
+    makes the generated foreign keys consistent.
+paths: {}
+components:
+  schemas:
+    orders:
+      type: object
+      x-primary-key: id
+      required: [id, user_id, status, total, quantity, email, created_at]
+      properties:
+        id:
+          type: string
+          format: uuid
+        user_id:
+          $ref: "./users.yaml"
+        status:
+          type: string
+          enum: [pending, paid, shipped, cancelled]
+        total:
+          type: number
+          minimum: 0
+          maximum: 100000
+        quantity:
+          type: integer
+          minimum: 1
+          maximum: 99
+        email:
+          type: string
+          format: email
+        created_at:
+          type: string
+          format: date-time

@@ -1,0 +1,58 @@
+{
+  "tool": "schemaseed",
+  "input": "/mnt/workspace/dsh/001/赚钱/schema-seed/fixtures/ecommerce-orders.openapi.yaml",
+  "seed": 7740387119995446,
+  "count": 20,
+  "mode": "relational",
+  "formats": [
+    "json",
+    "jsonl",
+    "csv",
+    "sql",
+    "ts",
+    "pytest"
+  ],
+  "documents": [
+    {
+      "file": "/mnt/workspace/dsh/001/赚钱/schema-seed/fixtures/ecommerce-orders.openapi.yaml",
+      "kind": "openapi"
+    },
+    {
+      "file": "/mnt/workspace/dsh/001/赚钱/schema-seed/fixtures/users.yaml",
+      "kind": "jsonschema"
+    }
+  ],
+  "tables": [
+    {
+      "name": "orders",
+      "rows": 20,
+      "kind": "relational"
+    },
+    {
+      "name": "users",
+      "rows": 20,
+      "kind": "relational"
+    }
+  ],
+  "negativeCases": 44,
+  "warnings": [],
+  "files": [
+    "json/orders.json",
+    "json/users.json",
+    "json/nested.json",
+    "jsonl/orders.jsonl",
+    "jsonl/users.jsonl",
+    "jsonl/nested.jsonl",
+    "csv/orders.csv",
+    "csv/users.csv",
+    "sql/seed.sql",
+    "sql/negatives.sql",
+    "ts/orders.ts",
+    "ts/users.ts",
+    "ts/index.ts",
+    "pytest/_validator.py",
+    "pytest/test_orders.py",
+    "pytest/test_users.py",
+    "pytest/README.md"
+  ]
+}

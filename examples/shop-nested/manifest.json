@@ -1,0 +1,62 @@
+{
+  "tool": "schemaseed",
+  "input": "/mnt/workspace/dsh/001/赚钱/schema-seed/fixtures/shop.openapi.yaml",
+  "seed": 5243984732049993,
+  "count": 10,
+  "mode": "nested",
+  "formats": [
+    "json",
+    "jsonl",
+    "csv",
+    "sql",
+    "ts",
+    "pytest"
+  ],
+  "documents": [
+    {
+      "file": "/mnt/workspace/dsh/001/赚钱/schema-seed/fixtures/shop.openapi.yaml",
+      "kind": "openapi"
+    }
+  ],
+  "tables": [
+    {
+      "name": "customers",
+      "rows": 10,
+      "kind": "nested"
+    },
+    {
+      "name": "products",
+      "rows": 10,
+      "kind": "nested"
+    },
+    {
+      "name": "order_items",
+      "rows": 10,
+      "kind": "nested"
+    }
+  ],
+  "negativeCases": 66,
+  "warnings": [],
+  "files": [
+    "json/customers.json",
+    "json/products.json",
+    "json/order_items.json",
+    "jsonl/customers.jsonl",
+    "jsonl/products.jsonl",
+    "jsonl/order_items.jsonl",
+    "csv/customers.csv",
+    "csv/products.csv",
+    "csv/order_items.csv",
+    "sql/seed.sql",
+    "sql/negatives.sql",
+    "ts/customers.ts",
+    "ts/products.ts",
+    "ts/order_items.ts",
+    "ts/index.ts",
+    "pytest/_validator.py",
+    "pytest/test_customers.py",
+    "pytest/test_products.py",
+    "pytest/test_order_items.py",
+    "pytest/README.md"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@wenlu8848/schemaseed",
+  "version": "0.2.2",
+  "type": "module",
+  "description": "Deterministic seed data and negative test cases from an OpenAPI 3.x or JSON Schema document.",
+  "license": "MIT",
+  "author": "SchemaSeed contributors",
+  "homepage": "https://schemaseed.drz8848.win",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drz8848-mike8844/schemaseed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/drz8848-mike8844/schemaseed/issues"
+  },
+  "keywords": [
+    "openapi",
+    "json-schema",
+    "seed-data",
+    "fake-data",
+    "mock-data",
+    "postgres",
+    "sql",
+    "test-data",
+    "api-testing",
+    "contract-testing",
+    "deterministic",
+    "prng",
+    "fixtures",
+    "code-generation"
+  ],
+  "bin": {
+    "schemaseed": "dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "!dist/src/",
+    "src/",
+    "fixtures/",
+    "examples/",
+    "!examples/**/__pycache__/",
+    "README.md",
+    "LICENSE",
+    "scripts/build.mjs"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": false
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:test": "node scripts/build.mjs --tests",
+    "test": "node scripts/build.mjs --tests && node --test build/test/*.test.js",
+    "demo": "node scripts/build.mjs && node dist/cli.js generate --input fixtures/ecommerce-orders.openapi.yaml --out examples/ecommerce-orders --formats json,jsonl,csv,sql,ts,pytest --count 25 --relations",
+    "clean": "node -e \"const fs=require('fs');for(const d of ['dist','build'])fs.rmSync(d,{recursive:true,force:true});\"",
+    "prepublishOnly": "node scripts/publish-check.js"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,21 @@
+type: object
+x-primary-key: id
+required: [id, email, name, age, created_at]
+properties:
+  id:
+    type: string
+    format: uuid
+  email:
+    type: string
+    format: email
+  name:
+    type: string
+    minLength: 2
+    maxLength: 40
+  age:
+    type: integer
+    minimum: 0
+    maximum: 120
+  created_at:
+    type: string
+    format: date-time
